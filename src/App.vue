@@ -24,9 +24,7 @@
           <h1 class="text-sm font-bold uppercase mb-0">{{ schoolInfo.name }}</h1>
           <p class="text-sm">{{ schoolInfo.address }}</p>
           <p class="text-sm">Tel: {{ schoolInfo.phone }}</p>
-          <p class="text-sm font-bold uppercase mt-2">
-            BULLETIN du {{ schoolInfo.cycle }}
-          </p>
+          <p class="text-sm font-bold uppercase mt-2">BULLETIN du {{ schoolInfo.cycle }}</p>
         </div>
       </div>
 
@@ -38,9 +36,7 @@
         </div>
         <div>
           <p><span class="font-bold">Classe:</span> {{ student.class }}</p>
-          <p>
-            <span class="font-bold">Année Académique:</span> {{ student.academicYear }}
-          </p>
+          <p><span class="font-bold">Année Académique:</span> {{ student.academicYear }}</p>
         </div>
       </div>
 
@@ -67,11 +63,7 @@
             <tr class="bg-gray-50">
               <td colspan="11" class="border p-1 font-bold">Matières Fondamentales</td>
             </tr>
-            <tr
-              v-for="subject in literarySubjects"
-              :key="subject.name"
-              class="text-[11px]"
-            >
+            <tr v-for="subject in literarySubjects" :key="subject.name" class="text-[11px]">
               <td class="border p-1">{{ subject.name }}</td>
               <td class="border p-1 text-end">{{ subject.note1 }}</td>
               <td class="border p-1 text-end">{{ subject.note2 }}</td>
@@ -86,8 +78,7 @@
               <td class="border p-1 text-end">
                 {{
                   (
-                    ((subject.note1 + subject.note2 + subject.exam) *
-                      subject.coefficient) /
+                    ((subject.note1 + subject.note2 + subject.exam) * subject.coefficient) /
                     3
                   ).toFixed(2)
                 }}
@@ -95,19 +86,13 @@
 
               <td class="border p-1">{{ subject.teacher }}</td>
               <td class="border p-1">
-                {{
-                  getRemarks(
-                    ((subject.note1 + subject.note2 + subject.exam) / 3).toFixed(2)
-                  )
-                }}
+                {{ getRemarks(((subject.note1 + subject.note2 + subject.exam) / 3).toFixed(2)) }}
               </td>
             </tr>
 
             <!-- Scientific Subjects -->
             <tr class="bg-gray-50">
-              <td colspan="11" class="border p-1 font-bold" v-if="false">
-                Matières scientifiques
-              </td>
+              <td colspan="11" class="border p-1 font-bold" v-if="false">Matières scientifiques</td>
             </tr>
             <tr
               v-if="false"
@@ -129,8 +114,7 @@
               <td class="border p-1 text-end">
                 {{
                   (
-                    ((subject.note1 + subject.note2 + subject.exam) *
-                      subject.coefficient) /
+                    ((subject.note1 + subject.note2 + subject.exam) * subject.coefficient) /
                     3
                   ).toFixed(2)
                 }}
@@ -138,11 +122,7 @@
 
               <td class="border p-1">{{ subject.teacher }}</td>
               <td class="border p-1">
-                {{
-                  getRemarks(
-                    ((subject.note1 + subject.note2 + subject.exam) / 3).toFixed(2)
-                  )
-                }}
+                {{ getRemarks(((subject.note1 + subject.note2 + subject.exam) / 3).toFixed(2)) }}
               </td>
             </tr>
 
@@ -150,11 +130,7 @@
             <tr class="bg-gray-50">
               <td colspan="11" class="border p-1 font-bold">Matières facultatives</td>
             </tr>
-            <tr
-              v-for="subject in optionalSubjects"
-              :key="subject.name"
-              class="text-[11px]"
-            >
+            <tr v-for="subject in optionalSubjects" :key="subject.name" class="text-[11px]">
               <td class="border p-1">{{ subject.name }}</td>
               <td class="border p-1 text-end">{{ subject.note1 }}</td>
               <td class="border p-1 text-end">{{ subject.note2 }}</td>
@@ -169,8 +145,7 @@
               <td class="border p-1 text-end">
                 {{
                   (
-                    ((subject.note1 + subject.note2 + subject.exam) *
-                      subject.coefficient) /
+                    ((subject.note1 + subject.note2 + subject.exam) * subject.coefficient) /
                     3
                   ).toFixed(2)
                 }}
@@ -178,11 +153,7 @@
 
               <td class="border p-1">{{ subject.teacher }}</td>
               <td class="border p-1">
-                {{
-                  getRemarks(
-                    ((subject.note1 + subject.note2 + subject.exam) / 3).toFixed(2)
-                  )
-                }}
+                {{ getRemarks(((subject.note1 + subject.note2 + subject.exam) / 3).toFixed(2)) }}
               </td>
             </tr>
           </tbody>
@@ -244,19 +215,13 @@
         <h3 class="font-bold mb-2">Moyennes Semestrielles</h3>
         <div class="grid grid-cols-2 gap-4">
           <div>
-            <p>
-              <span class="font-bold">1er semestre:</span> {{ firstTrimesterAverage }}
-            </p>
+            <p><span class="font-bold">1er semestre:</span> {{ firstTrimesterAverage }}</p>
           </div>
           <div v-if="secondTrimesterAverage">
-            <p>
-              <span class="font-bold">2ème semestre:</span> {{ secondTrimesterAverage }}
-            </p>
+            <p><span class="font-bold">2ème semestre:</span> {{ secondTrimesterAverage }}</p>
           </div>
           <div v-if="false">
-            <p>
-              <span class="font-bold">3ème Trimestre:</span> {{ thirdTrimesterAverage }}
-            </p>
+            <p><span class="font-bold">3ème Trimestre:</span> {{ thirdTrimesterAverage }}</p>
           </div>
         </div>
       </div>
@@ -281,7 +246,7 @@
             <div class="mt-2 h-10 border-b border-black"></div>
           </div>
           <div class="text-right">
-            <p>Date: {{ "10/04/2022" }}</p>
+            <p>Date: {{ '10/04/2022' }}</p>
             <p class="mt-4">Le Directeur</p>
             <div class="mt-2 h-10 border-b border-black"></div>
           </div>
@@ -292,167 +257,167 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue'
 
 // School Information
 const schoolInfo = ref({
-  name: "COMPLEXE SCOLAIRE LIDAO",
-  address: "Agoe-nyivé,Sogbossito",
-  phone: "00228 90421598/92083054",
-  cycle: "1er semestre",
-});
+  name: 'COMPLEXE SCOLAIRE LIDAO',
+  address: 'Agoe-nyivé,Sogbossito',
+  phone: '00228 90421598/92083054',
+  cycle: '1er semestre',
+})
 
 // Student Information
 const student = ref({
-  id: "LIDAO/LM/2021/1268",
-  name: "EGBAREH La joie Biguedinam Charité",
-  class: "1ere G1",
-  academicYear: "2022-2023",
-});
+  id: 'LIDAO/LM/2021/1268',
+  name: 'EGBAREH La joie Biguedinam Charité',
+  class: '1ere G1',
+  academicYear: '2022-2023',
+})
 
 const literarySubjects = ref([
   {
-    name: "Français",
+    name: 'Français',
     note1: 13,
-    note2: 14,
+    note2: 14.5,
     exam: 15,
     coefficient: 3,
-    teacher: "M. BATAKO",
-    comments: "Bien",
+    teacher: 'LAWSON ',
+    comments: 'Bien',
   },
   {
-    name: "ECM/HG",
+    name: 'ECM/HG',
+    note1: 12,
+    note2: 13,
+    exam: 14,
+    coefficient: 2,
+    teacher: 'BASSASSAGA ',
+    comments: 'Assez bien',
+  },
+  {
+    name: 'Anglais',
     note1: 12,
     note2: 12,
     exam: 13,
     coefficient: 2,
-    teacher: "M. BATAKO",
-    comments: "Assez bien",
+    teacher: 'ABALO ',
+    comments: 'Assez bien',
   },
   {
-    name: "Anglais",
+    name: 'Allemand',
     note1: 12,
-    note2: 13,
-    exam: 13,
-    coefficient: 2,
-    teacher: "M. FOUSSENI",
-    comments: "Assez bien",
-  },
-  {
-    name: "Allemand",
-    note1: 11,
     note2: 12,
-    exam: 12,
+    exam: 12.5,
     coefficient: 2,
-    teacher: "M. OURO-SEVA",
-    comments: "Assez bien",
+    teacher: ' SIMLIWA ',
+    comments: 'Assez bien',
   },
   {
-    name: "Droit civil",
-    note1: 12,
-    note2: 13,
-    exam: 13,
-    coefficient: 2,
-    teacher: "M. BASSAGA",
-    comments: "Assez bien",
-  },
-  {
-    name: "Eco. Orga",
-    note1: 12,
-    note2: 13,
-    exam: 12,
-    coefficient: 2,
-    teacher: "M. BASSAGA",
-    comments: "Assez bien",
-  },
-  {
-    name: "Eco. Géné",
-    note1: 12,
-    note2: 13,
-    exam: 12,
-    coefficient: 2,
-    teacher: "M. BASSAGA",
-    comments: "Assez bien",
-  },
-  {
-    name: "TAS",
-    note1: 12,
-    note2: 13,
-    exam: 12,
-    coefficient: 4,
-    teacher: "M. BASSAGA",
-    comments: "Assez bien",
-  },
-  {
-    name: "TBS",
-    note1: 12,
-    note2: 13,
-    exam: 12,
-    coefficient: 1,
-    teacher: "M. BASSAGA",
-    comments: "Assez bien",
-  },
-  {
-    name: "Bureautique",
-    note1: 12,
-    note2: 13,
-    exam: 12,
-    coefficient: 1,
-    teacher: "M. BASSAGA",
-    comments: "Assez bien",
-  },
-  {
-    name: "EPS",
-    note1: 13,
+    name: 'Droit civil',
+    note1: 15,
     note2: 14,
-    exam: 13,
-    coefficient: 1,
-    teacher: "M. MANAKE",
-    comments: "Assez bien",
+    exam: 15,
+    coefficient: 2,
+    teacher: 'KABISSI ',
+    comments: 'Assez bien',
   },
-]);
+  {
+    name: 'Eco. Orga',
+    note1: 5,
+    note2: 8,
+    exam: 6,
+    coefficient: 2,
+    teacher: 'KOUDJOM ',
+    comments: 'insuffisant',
+  },
+  {
+    name: 'Eco. Géné',
+    note1: 8,
+    note2: 8,
+    exam: 7,
+    coefficient: 2,
+    teacher: ' AMOUZOU ',
+    comments: 'insuffisant',
+  },
+  {
+    name: 'TAS',
+    note1: 14,
+    note2: 14,
+    exam: 14,
+    coefficient: 4,
+    teacher: 'KONDO ',
+    comments: 'Assez bien',
+  },
+  {
+    name: 'TBS',
+    note1: 16,
+    note2: 18,
+    exam: 18,
+    coefficient: 1,
+    teacher: 'TOKO ',
+    comments: 'Assez bien',
+  },
+  {
+    name: 'Bureautique',
+    note1: 18,
+    note2: 19,
+    exam: 19,
+    coefficient: 1,
+    teacher: 'DOUTI ',
+    comments: 'T. bien',
+  },
+  {
+    name: 'EPS',
+    note1: 12,
+    note2: 12,
+    exam: 15,
+    coefficient: 1,
+    teacher: ' MANAKE',
+    comments: 'Assez bien',
+  },
+])
 
 const scientificSubjects = ref([
   {
-    name: "Mathématiques",
+    name: 'Mathématiques',
     note1: 10,
     note2: 11,
     exam: 13,
     coefficient: 4,
-    teacher: "Mr TONOU",
-    comments: "Passable",
+    teacher: ' TONOU',
+    comments: 'Passable',
   },
   {
-    name: "SVT",
+    name: 'SVT',
     note1: 10,
     note2: 12,
     exam: 11,
     coefficient: 1,
-    teacher: "Mr KOLANI",
-    comments: "Passable",
+    teacher: ' KOLANI',
+    comments: 'Passable',
   },
   {
-    name: "SP",
+    name: 'SP',
     note1: 10,
     note2: 11,
     exam: 11,
     coefficient: 1,
-    teacher: "Mr IDRISSOU",
-    comments: "Passable",
+    teacher: ' IDRISSOU',
+    comments: 'Passable',
   },
-]);
+])
 
 const optionalSubjects = ref([
   {
-    name: "EM",
-    note1: 12,
-    note2: 12,
-    exam: 12,
+    name: 'EM',
+    note1: 10,
+    note2: 10,
+    exam: 10,
     coefficient: 1,
-    teacher: "M. KPADJIBA",
-    comments: "Assez bien",
+    teacher: 'KPADJIBA ',
+    comments: 'Passable',
   },
-]);
+])
 /*
 const literarySubjects = ref([
   {
@@ -558,79 +523,79 @@ const allSubjects = computed(() => [
   ...optionalSubjects.value,
   ...literarySubjects.value,
   //...scientificSubjects.value
-]);
+])
 
 const totalCoefficients = computed(() => {
-  return allSubjects.value.reduce((sum, subject) => sum + subject.coefficient, 0);
-});
+  return allSubjects.value.reduce((sum, subject) => sum + subject.coefficient, 0)
+})
 
-console.log(totalCoefficients.value);
+console.log(totalCoefficients.value)
 
 const totalWeightedGrades = computed(() => {
-  return allSubjects.value.reduce((sum, subject) => sum + subject.weightedGrade, 0);
-});
+  return allSubjects.value.reduce((sum, subject) => sum + subject.weightedGrade, 0)
+})
 
 const generalAverage = computed(() => {
-  return (totalWeightedGrades.value / totalCoefficients.value).toFixed(2);
-});
+  return (totalWeightedGrades.value / totalCoefficients.value).toFixed(2)
+})
 
 const rank = computed(() => {
-  return "2e";
-});
+  return '2e'
+})
 
-const classSize = ref(9);
-const decision = ref("Admis(e)");
+const classSize = ref(9)
+const decision = ref('Admis(e)')
 
 const calculateWeightedGrade = (subject) => {
-  return ((subject.note1 + subject.note2 + subject.exam) * subject.coefficient) / 3;
-};
+  return ((subject.note1 + subject.note2 + subject.exam) * subject.coefficient) / 3
+}
 const calculateTotals = computed(() => {
   // Calcul pour les matières littéraires
   const literaryTotal = literarySubjects.value.reduce(
     (acc, subject) => {
-      const weightedGrade = calculateWeightedGrade(subject);
+      const weightedGrade = calculateWeightedGrade(subject)
       return {
         coefficientSum: acc.coefficientSum + subject.coefficient,
         weightedGradeSum: acc.weightedGradeSum + weightedGrade,
-      };
+      }
     },
-    { coefficientSum: 0, weightedGradeSum: 0 }
-  );
+    { coefficientSum: 0, weightedGradeSum: 0 },
+  )
 
   // Calcul pour les matières scientifiques
   const scientificTotal = scientificSubjects.value.reduce(
     (acc, subject) => {
-      const weightedGrade = calculateWeightedGrade(subject);
+      const weightedGrade = calculateWeightedGrade(subject)
       return {
         coefficientSum: acc.coefficientSum + subject.coefficient,
         weightedGradeSum: acc.weightedGradeSum + weightedGrade,
-      };
+      }
     },
-    { coefficientSum: 0, weightedGradeSum: 0 }
-  );
+    { coefficientSum: 0, weightedGradeSum: 0 },
+  )
 
   // Calcul pour les matières optionnelles
   const optionalTotal = optionalSubjects.value.reduce(
     (acc, subject) => {
-      const weightedGrade = calculateWeightedGrade(subject);
+      const weightedGrade = calculateWeightedGrade(subject)
       return {
         coefficientSum: acc.coefficientSum + subject.coefficient,
         weightedGradeSum: acc.weightedGradeSum + weightedGrade,
-      };
+      }
     },
-    { coefficientSum: 0, weightedGradeSum: 0 }
-  );
+    { coefficientSum: 0, weightedGradeSum: 0 },
+  )
 
   // Totaux généraux
   const totalCoefficients =
     literaryTotal.coefficientSum +
     // scientificTotal.coefficientSum +
-    optionalTotal.coefficientSum;
+    optionalTotal.coefficientSum
 
   const totalWeightedGrades =
     literaryTotal.weightedGradeSum +
     //  scientificTotal.weightedGradeSum +
-    optionalTotal.weightedGradeSum;
+    optionalTotal.weightedGradeSum
 
   return {
     coefficients: {
@@ -646,49 +611,40 @@ const calculateTotals = computed(() => {
       total: totalWeightedGrades.toFixed(2),
     },
     generalAverage: (totalWeightedGrades / totalCoefficients).toFixed(2),
-  };
-});
+  }
+})
 
 // Calcul pour les données fournies :
-const totals = calculateTotals.value;
+const totals = calculateTotals.value
 // Trimester Averages
-const firstTrimesterAverage = ref(12.6);
-const secondTrimesterAverage = ref(null);
-const thirdTrimesterAverage = ref("-");
+const firstTrimesterAverage = ref(12.6)
+const secondTrimesterAverage = ref(null)
+const thirdTrimesterAverage = ref('-')
 const Allaverage = computed(() => {
   return (
-    (firstTrimesterAverage.value +
-      secondTrimesterAverage.value +
-      thirdTrimesterAverage.value) /
+    (firstTrimesterAverage.value + secondTrimesterAverage.value + thirdTrimesterAverage.value) /
     3
-  ).toFixed(2);
-});
+  ).toFixed(2)
+})
 // Observations
 const observations = ref(
-  "L'élève a montré une amélioration constante tout au long de l'année. Continuez vos efforts !"
-);
+  "L'élève a montré une amélioration constante tout au long de l'année. Continuez vos efforts !",
+)
 
-const REMARQUES = [
-  "Excellent",
-  "Très bien",
-  "Bien",
-  "Assez bien",
-  "Passable",
-  "Insuffisant",
-];
+const REMARQUES = ['Excellent', 'Très bien', 'Bien', 'Assez bien', 'Passable', 'Insuffisant']
 
 const getRemarks = (average) => {
-  if (average >= 17) return "Excellent";
-  if (average >= 14.5) return "Très bien";
-  if (average >= 13) return "Bien";
-  if (average >= 11.9) return "Assez bien";
-  if (average >= 9.5) return "Passable";
-  return "Insuffisant";
-};
+  if (average >= 18) return 'Excellent'
+  if (average >= 15) return 'Très bien'
+  if (average >= 13) return 'Bien'
+  if (average >= 11.9) return 'Assez bien'
+  if (average >= 9.5) return 'Passable'
+  return 'Insuffisant'
+}
 // Class Teacher
 const classTeacher = ref({
-  name: "",
-});
+  name: '',
+})
 </script>
 
 <style scoped>
